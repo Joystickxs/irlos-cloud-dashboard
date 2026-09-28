@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #08080a;
+  --surface: #0e0e10;
+  --text: #e8e4da;
+  --muted: #948f86;
+  --dim: #6a655d;
+  --accent: #00d4ff;
+  --accent-dim: #0a6f85;
+  --live: #4ade80;
+  --rule: #1e1e20;
+  --rule-2: #2e2e31;
+  --canvas: #e8e4da;
+  --card: #ffffff;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* Custom Scrollbar for technical feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #e8e4da;
+}
+::-webkit-scrollbar-thumb {
+  background: #2e2e31;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00d4ff;
+}
+
+/* LED pulse animation from irlos.live */
+.led {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: pulse-live 1.8s infinite;
+}
+
+@keyframes pulse-live {
+  0% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(74, 222, 128, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+  }
+}
+
+.led-warning {
+  background: #f59e0b;
+  animation: pulse-warn 1.5s infinite;
+}
+
+@keyframes pulse-warn {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(245, 158, 11, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+.led-danger {
+  background: #ef4444;
+  animation: pulse-danger 1.2s infinite;
+}
+
+@keyframes pulse-danger {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.65);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+/* Subtle Technical Grid Overlay */
+.tech-grid {
+  background-image: 
+    linear-gradient(to right, rgba(46, 46, 49, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(46, 46, 49, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Tactile Button hover animations */
+.btn-tactile {
+  transition: transform 70ms ease, box-shadow 70ms ease;
+}
+.btn-tactile:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 0 transparent !important;
+}
